@@ -4,9 +4,7 @@
     <componets1> </componets1>
     <HelloWorld> </HelloWorld>
   </div>
-  
-</template> 
-
+</template>
 
 
 <script>
@@ -46,6 +44,5 @@ export default {
        console.log(this.info);
     }
   }
-
 };
 </script>

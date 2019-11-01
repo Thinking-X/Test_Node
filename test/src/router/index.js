@@ -26,6 +26,12 @@ const routes = [
     component: () =>
       import("../views/First.vue")  
       /* component: First */
+
+     /* component: () => 后 没有花括号，错误写法：
+      component: () =>  {
+        import("../views/First.vue")
+      }  
+    */
   }
 ];
 
