@@ -1,6 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue"; 
+import Home from "../views/Home.vue";
+//import vuex from "vuex";
+
 /* import First from "../views/First.vue"; */
 
 Vue.use(VueRouter);
@@ -32,6 +34,12 @@ const routes = [
         import("../views/First.vue")
       }  
     */
+  },
+  {
+    path: "/Father",
+    name: "father",
+    component: () =>
+      import("../views/Father.vue")
   }
 ];
 

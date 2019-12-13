@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>This is an First page</h1>
     <componets1> </componets1>
     <HelloWorld> </HelloWorld>
   </div>
@@ -29,12 +29,17 @@ export default {
   },
   methods:{
     init(){
-      this.handleAjax() 
+      this.handleGet();
+      //this.handlePost();
     },
-    async handleAjax(){
+    async handleGet(){
        let response = await request({
-          url:"/api/news/1",
-          method:"get" 
+          // url:"/api/news/1",
+          // method:"get" 
+
+          url: "api/news/GetNewsByID",
+          method: "get",
+          params: { id: 1 } 
        });
        this.info = response.data;
        
@@ -42,6 +47,20 @@ export default {
        //document.write(this.info)
        // eslint-disable-next-line no-console
        console.log(this.info);
+    },
+     async handlePost(){
+      let response = await request({
+        url:"/api/news/AddManage",
+        method:"post",
+        data:{
+          TrueName:1,
+          Phone:"2",
+          Pwd:"3"
+        }
+      });
+      this.info = response.info;
+      // eslint-disable-next-line no-console
+      console.log(this.info);
     }
   }
 };
